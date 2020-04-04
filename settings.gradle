@@ -1,0 +1,2 @@
+rootProject.name='Sintezi'
+include ':app'
