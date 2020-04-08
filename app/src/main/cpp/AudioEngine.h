@@ -13,7 +13,7 @@ public:
     bool start();
     void stop();
     void restart();
-    void setToneOn(bool isToneOn);
+    void setToneOn(bool isToneOn, float frequency);
 
 private:
     Oscillator oscillator_;

@@ -6,6 +6,7 @@
 #include <thread>
 #include <mutex>
 
+
 // Double-buffering offers a good tradeoff between latency and protection against glitches.
 constexpr int32_t kBufferSizeInBursts = 2;
 
@@ -17,6 +18,7 @@ aaudio_data_callback_result_t dataCallback(
 
     ((Oscillator *) (userData))->render(static_cast<float *>(audioData), numFrames);
     return AAUDIO_CALLBACK_RESULT_CONTINUE;
+
 }
 
 void errorCallback(AAudioStream *stream,
@@ -51,7 +53,7 @@ bool AudioEngine::start() {
     oscillator_.setSampleRate(sampleRate);
 
     //set waveshape
-    oscillator_.setWaveShape(Square);
+    oscillator_.setWaveShape(Saw);
 
     // Sets the buffer size.
     AAudioStream_setBufferSizeInFrames(
@@ -86,6 +88,7 @@ void AudioEngine::stop() {
     }
 }
 
-void AudioEngine::setToneOn(bool isToneOn) {
-    oscillator_.setWaveOn(isToneOn);
+void AudioEngine::setToneOn(bool isToneOn, float frequency) {
+
+    oscillator_.setWaveOn(isToneOn, frequency);
 }

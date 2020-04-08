@@ -8,13 +8,13 @@ static AudioEngine *audioEngine = new AudioEngine();
 extern "C" {
 
 JNIEXPORT void JNICALL
-Java_com_io_sintezi_MainActivity_touchEvent(JNIEnv *env, jobject obj, jint action) {
+Java_com_io_sintezi_MainActivity_touchEvent(JNIEnv *env, jobject obj, jint action, jfloat frequency) {
     switch (action) {
         case AMOTION_EVENT_ACTION_DOWN:
-            audioEngine->setToneOn(true);
+            audioEngine->setToneOn(true, frequency);
         break;
         case AMOTION_EVENT_ACTION_UP:
-            audioEngine->setToneOn(false);
+            audioEngine->setToneOn(false, frequency);
         break;
         default:
         break;
