@@ -22,6 +22,11 @@ Java_com_io_sintezi_MainActivity_touchEvent(JNIEnv *env, jobject obj, jint actio
 }
 
 JNIEXPORT void JNICALL
+Java_com_io_sintezi_MainActivity_setWaveShape(JNIEnv *env, jobject thiz, jint wave_shape) {
+    audioEngine->setWaveShape(wave_shape);
+}
+
+JNIEXPORT void JNICALL
 Java_com_io_sintezi_MainActivity_startEngine(JNIEnv *env, jobject /* this */) {
 audioEngine->start();
 }

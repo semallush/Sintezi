@@ -92,3 +92,27 @@ void AudioEngine::setToneOn(bool isToneOn, float frequency) {
 
     oscillator_.setWaveOn(isToneOn, frequency);
 }
+void AudioEngine::setWaveShape(int waveShape) {
+    switch (waveShape) {
+        case 0:
+            oscillator_.setWaveShape(Sin);
+            break;
+
+        case 1:
+            oscillator_.setWaveShape(Triangle);
+            break;
+
+        case 2:
+            oscillator_.setWaveShape(Square);
+            break;
+
+        case 3:
+            oscillator_.setWaveShape(Saw);
+            break;
+
+        default:
+            oscillator_.setWaveShape(Sin);
+            break;
+    }
+
+}

@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.Button;
 
 
-
 public class MainActivity extends AppCompatActivity {
 
 
@@ -24,13 +23,24 @@ public class MainActivity extends AppCompatActivity {
 
     private native void stopEngine();
 
+    private native void setWaveShape(int waveShape);
+
     @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
+
         startEngine();
+
+
+        final Scale theScale = new Scale();
+        theScale.setScaleType(ScaleType.BLUES);
+
+        //sin = 0, tri = 1, square = 2, saw = 3
+        setWaveShape(3);
 
         //get buttonA
         final Button keyA = findViewById(R.id.keyA);
@@ -44,13 +54,13 @@ public class MainActivity extends AppCompatActivity {
                         // PRESSED
                         keyA.setScaleX((float)(1/0.9));
                         keyA.setScaleY((float)(1/0.9));
-                        touchEvent(0,(float) 130.81);
+                        touchEvent(0, theScale.getValues()[0]);
                         return true; // if you want to handle the touch event
                     case MotionEvent.ACTION_UP:
                         keyA.setScaleX((float)0.9);
                         keyA.setScaleY((float)0.9);
                         // RELEASED
-                        touchEvent(1, (float) 130.81);
+                        touchEvent(1, theScale.getValues()[0]);
                         return true; // if you want to handle the touch event
                 }
                 return false;
@@ -72,13 +82,13 @@ public class MainActivity extends AppCompatActivity {
                         // PRESSED
                         keyB.setScaleX((float)(1/0.9));
                         keyB.setScaleY((float)(1/0.9));
-                        touchEvent(0,(float) 155.56);
+                        touchEvent(0,theScale.getValues()[1]);
                         return true; // if you want to handle the touch event
                     case MotionEvent.ACTION_UP:
                         // RELEASED
                         keyB.setScaleX((float)0.9);
                         keyB.setScaleY((float)0.9);
-                        touchEvent(1,(float) 155.56);
+                        touchEvent(1,theScale.getValues()[1]);
                         return true; // if you want to handle the touch event
                 }
                 return false;
@@ -100,13 +110,13 @@ public class MainActivity extends AppCompatActivity {
                         // PRESSED
                         keyC.setScaleX((float)(1/0.9));
                         keyC.setScaleY((float)(1/0.9));
-                        touchEvent(0,(float) 174.61);
+                        touchEvent(0,theScale.getValues()[2]);
                         return true; // if you want to handle the touch event
                     case MotionEvent.ACTION_UP:
                         // RELEASED
                         keyC.setScaleX((float)0.9);
                         keyC.setScaleY((float)0.9);
-                        touchEvent(1,(float) 174.61);
+                        touchEvent(1,theScale.getValues()[2]);
                         return true; // if you want to handle the touch event
                 }
                 return false;
@@ -129,13 +139,13 @@ public class MainActivity extends AppCompatActivity {
                         // PRESSED
                         keyD.setScaleX((float)(1/0.9));
                         keyD.setScaleY((float)(1/0.9));
-                        touchEvent(0,(float) 185.00);
+                        touchEvent(0, theScale.getValues()[3]);
                         return true; // if you want to handle the touch event
                     case MotionEvent.ACTION_UP:
                         // RELEASED
                         keyD.setScaleX((float)0.9);
                         keyD.setScaleY((float)0.9);
-                        touchEvent(1,(float) 185.00);
+                        touchEvent(1,theScale.getValues()[3]);
                         return true; // if you want to handle the touch event
                 }
                 return false;
@@ -158,13 +168,13 @@ public class MainActivity extends AppCompatActivity {
                         // PRESSED
                         keyE.setScaleX((float)(1/0.9));
                         keyE.setScaleY((float)(1/0.9));
-                        touchEvent(0,(float) 196.00);
+                        touchEvent(0,(float) theScale.getValues()[4]);
                         return true; // if you want to handle the touch event
                     case MotionEvent.ACTION_UP:
                         // RELEASED
                         keyE.setScaleX((float)0.9);
                         keyE.setScaleY((float)0.9);
-                        touchEvent(1,(float) 196.00);
+                        touchEvent(1,(float) theScale.getValues()[4]);
                         return true; // if you want to handle the touch event
                 }
                 return false;
@@ -187,13 +197,13 @@ public class MainActivity extends AppCompatActivity {
                         // PRESSED
                         keyF.setScaleX((float)(1/0.9));
                         keyF.setScaleY((float)(1/0.9));
-                        touchEvent(0,(float) 233.08);
+                        touchEvent(0, theScale.getValues()[5]);
                         return true; // if you want to handle the touch event
                     case MotionEvent.ACTION_UP:
                         // RELEASED
                         keyF.setScaleX((float)0.9);
                         keyF.setScaleY((float)0.9);
-                        touchEvent(1,(float) 233.08);
+                        touchEvent(1, theScale.getValues()[5]);
                         return true; // if you want to handle the touch event
                 }
                 return false;
@@ -216,11 +226,11 @@ public class MainActivity extends AppCompatActivity {
                         // PRESSED
                         keyG.setScaleX((float)(1/0.9));
                         keyG.setScaleY((float)(1/0.9));
-                        touchEvent(0,(float) 261.63);
+                        touchEvent(0, theScale.getValues()[6]);
                         return true; // if you want to handle the touch event
                     case MotionEvent.ACTION_UP:
                         // RELEASED
-                        touchEvent(1,(float) 261.63);
+                        touchEvent(1, theScale.getValues()[6]);
                         keyG.setScaleX((float)0.9);
                         keyG.setScaleY((float)0.9);
                         return true; // if you want to handle the touch event

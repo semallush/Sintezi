@@ -14,6 +14,7 @@ public:
     void stop();
     void restart();
     void setToneOn(bool isToneOn, float frequency);
+    void setWaveShape(int waveShape);
 
 private:
     Oscillator oscillator_;
