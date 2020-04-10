@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 
 //hoi douwe hoe gaat het
+//hopi bon swa
 public class MainActivity extends AppCompatActivity {
 
 
