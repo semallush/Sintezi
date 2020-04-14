@@ -4,104 +4,107 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/darkGray"
     tools:context=".MainActivity">
-
-   <ImageView
-       android:id="@+id/imageView2"
-       android:layout_width="match_parent"
-       android:layout_height="match_parent"
-       android:background="@color/black"
-       tools:layout_editor_absoluteX="0dp"
-       tools:layout_editor_absoluteY="-65dp" />
 
    <Button
        android:id="@+id/keyA"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:background="@drawable/keymdpi"
-       app:layout_constraintBottom_toBottomOf="parent"
-       app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintHorizontal_bias="0.128"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toTopOf="parent"
-       app:layout_constraintVertical_bias="0.056" />
+       android:layout_width="220dp"
+       android:layout_height="160dp"
+       android:layout_marginBottom="16dp"
+       android:background="@drawable/key_lefthdpi"
+       app:layout_constraintBottom_toTopOf="@+id/keyC"
+       app:layout_constraintStart_toStartOf="parent" />
 
    <Button
        android:id="@+id/keyB"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
+       android:layout_width="220dp"
+       android:layout_height="160dp"
        android:layout_marginTop="72dp"
-       android:background="@drawable/keymdpi"
+       android:background="@drawable/key_right_1hdpi"
+       app:layout_constraintBottom_toTopOf="@+id/keyD"
        app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintHorizontal_bias="0.0"
-       app:layout_constraintStart_toEndOf="@+id/keyA"
        app:layout_constraintTop_toTopOf="@+id/keyA" />
 
    <Button
        android:id="@+id/keyC"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:layout_marginTop="32dp"
-       android:background="@drawable/keymdpi"
-       app:layout_constraintEnd_toStartOf="@+id/keyB"
-       app:layout_constraintHorizontal_bias="1.0"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toBottomOf="@+id/keyA" />
+       android:layout_width="220dp"
+       android:layout_height="160dp"
+       android:layout_marginBottom="16dp"
+       android:background="@drawable/key_lefthdpi"
+       app:layout_constraintBottom_toTopOf="@+id/keyE"
+       app:layout_constraintStart_toStartOf="parent" />
 
    <Button
        android:id="@+id/keyD"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:layout_marginTop="32dp"
-       android:background="@drawable/keymdpi"
-       app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintHorizontal_bias="0.0"
-       app:layout_constraintStart_toEndOf="@+id/keyC"
-       app:layout_constraintTop_toBottomOf="@+id/keyB" />
+       android:layout_width="220dp"
+       android:layout_height="160dp"
+       android:layout_marginBottom="16dp"
+       android:background="@drawable/key_right_1hdpi"
+       app:layout_constraintBottom_toTopOf="@+id/keyF"
+       app:layout_constraintEnd_toEndOf="parent" />
 
    <Button
        android:id="@+id/keyE"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:layout_marginTop="32dp"
-       android:background="@drawable/keymdpi"
-       app:layout_constraintEnd_toStartOf="@+id/keyD"
-       app:layout_constraintHorizontal_bias="1.0"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toBottomOf="@+id/keyC" />
+       android:layout_width="220dp"
+       android:layout_height="160dp"
+       android:layout_marginBottom="16dp"
+       android:background="@drawable/key_lefthdpi"
+       app:layout_constraintBottom_toTopOf="@+id/keyG"
+       app:layout_constraintStart_toStartOf="parent" />
 
    <Button
        android:id="@+id/keyF"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:layout_marginTop="32dp"
-       android:background="@drawable/keymdpi"
-       app:layout_constraintStart_toEndOf="@+id/keyE"
-       app:layout_constraintTop_toBottomOf="@+id/keyD" />
-
-   <Button
-       android:id="@+id/keyG"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:layout_marginTop="32dp"
-       android:background="@drawable/keymdpi"
-       app:layout_constraintEnd_toStartOf="@+id/keyF"
-       app:layout_constraintHorizontal_bias="1.0"
-       app:layout_constraintStart_toStartOf="parent"
+       android:layout_width="220dp"
+       android:layout_height="160dp"
+       android:background="@drawable/key_right_1hdpi"
+       app:layout_constraintBottom_toTopOf="@+id/keyG"
+       app:layout_constraintEnd_toEndOf="parent"
        app:layout_constraintTop_toBottomOf="@+id/keyE" />
 
    <Button
-       android:id="@+id/waveShape"
-       android:layout_width="79dp"
-       android:layout_height="75dp"
-       android:layout_marginTop="28dp"
-       android:background="@drawable/sawtooth_wavehdpi"
+       android:id="@+id/keyG"
+       android:layout_width="220dp"
+       android:layout_height="160dp"
+       android:background="@drawable/key_lefthdpi"
        app:layout_constraintBottom_toBottomOf="parent"
        app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintHorizontal_bias="0.491"
+       app:layout_constraintHorizontal_bias="0.0"
+       app:layout_constraintStart_toStartOf="parent" />
+
+   <Spinner
+       android:id="@+id/wave_spinner"
+       android:layout_width="79dp"
+       android:layout_height="75dp"
+       android:layout_marginTop="17dp"
+       android:background="@drawable/wave_sinexhdpi"
+       app:layout_constraintBottom_toTopOf="@+id/keyB"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="0.414"
        app:layout_constraintStart_toEndOf="@+id/keyG"
-       app:layout_constraintTop_toBottomOf="@+id/keyF"
-       app:layout_constraintVertical_bias="0.254" />
+       app:layout_constraintTop_toBottomOf="@+id/imageView3"
+       app:layout_constraintVertical_bias="0.277" />
+
+   <ImageView
+       android:id="@+id/imageView3"
+       android:layout_width="match_parent"
+       android:layout_height="60dp"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintTop_toTopOf="parent"
+       app:srcCompat="@drawable/top_barhdpi" />
+
+   <Spinner
+       android:id="@+id/spinner_tone"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:text="Tone"
+       android:textAlignment="center"
+       android:textColor="@color/lightGray"
+       android:backgroundTint="@color/black"
+       android:textSize="40sp"
+       app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+       app:layout_constraintTop_toTopOf="@+id/imageView3"
+       tools:layout_editor_absoluteX="16dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

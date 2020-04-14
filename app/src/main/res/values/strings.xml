@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Sintezi</string>
+
+    <string-array name="scales">
+        <item>Maj</item>
+        <item>Min</item>
+        <item>Blues</item>
+        <item>MPent</item>
+        <item>mPent</item>
+    </string-array>
+
 </resources>
