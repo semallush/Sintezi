@@ -12,7 +12,6 @@
         android:layout_alignParentTop="true"
         android:layout_margin="16dp"
         android:gravity="center"
-        android:text="Tone"
         android:textColor="@color/lightGray"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"

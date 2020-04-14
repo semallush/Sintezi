@@ -34,6 +34,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private ArrayList<WaveItem> mWaveList;
     private WaveAdapter mAdapter;
 
+    private ArrayList<ToneItem> mToneList;
+    private ToneAdapter mToneAdapter;
+
 
 
     @Override
@@ -77,19 +80,16 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
 
         startEngine();
-
-
-
 
         final Scale theScale = new Scale();
         theScale.setScaleType(ScaleType.MAJOR);
 
         //sin = 0, tri = 1, square = 2, saw = 3
         setWaveShape(3);
+
 
         //get buttonA
         final Button keyA = findViewById(R.id.keyA);
@@ -333,9 +333,36 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             public void onNothingSelected(AdapterView<?> parent) {
 
             }
+
+
         });
 
+        //initList1();
+
+        //Spinner spinnerTones = findViewById(R.id.spinner_tone);
+
+        //mToneAdapter = new ToneAdapter(this, mToneList);
+        //spinnerTones.setAdapter(mToneAdapter);
+
+        //spinnerTones.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            //@Override
+            //public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                //ToneItem clickedItem = (ToneItem) parent.getItemAtPosition(position);
+                //String clickedToneName = clickedItem.getToneName();
+                //Toast.makeText(MainActivity.this, clickedToneName + " selected", Toast.LENGTH_SHORT).show();
+           // }
+
+           // @Override
+           // public void onNothingSelected(AdapterView<?> parent) {
+
+           // }
+       // });
+
+
+
+
     }
+
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
@@ -358,6 +385,21 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 
     }
+
+
+
+    //private void initList1() {
+        //mToneList = new ArrayList<>();
+        //mToneList.add(new ToneItem("Maj"));
+        //mToneList.add(new ToneItem("Min"));
+        //mToneList.add(new ToneItem("Blues"));
+        //mToneList.add(new ToneItem("MPent"));
+        //mToneList.add(new ToneItem("mpent"));
+
+
+    //}
+
+
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {

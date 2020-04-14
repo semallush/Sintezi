@@ -42,7 +42,7 @@ public class ToneAdapter extends ArrayAdapter<ToneItem> {
         ToneItem currentItem = getItem(position);
 
         if (currentItem != null) {
-            textViewName.setText(currentItem.getCountryName());
+            textViewName.setText(currentItem.getToneName());
         }
 
         return convertView;

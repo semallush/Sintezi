@@ -7,7 +7,7 @@ public class ToneItem {
         mToneName = toneName;
     }
 
-    public String getCountryName() {
+    public String getToneName() {
         return mToneName;
     }
 }
