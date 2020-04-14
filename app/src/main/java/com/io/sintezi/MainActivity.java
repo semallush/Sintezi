@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 
         final Scale theScale = new Scale();
-        theScale.setScaleType(ScaleType.BLUES);
+        theScale.setScaleType(ScaleType.MAJOR);
 
         //sin = 0, tri = 1, square = 2, saw = 3
         setWaveShape(3);
@@ -302,6 +302,30 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 WaveItem clickedItem = (WaveItem) parent.getItemAtPosition(position);
                 String clickedItemWaveName = clickedItem.getWaveName();
+
+                switch (clickedItemWaveName) {
+                    case "Sine":
+
+                        setWaveShape(0);
+                        break;
+
+                    case "Sawtooth" :
+
+                        setWaveShape(3);
+                        break;
+
+                    case "Square":
+
+                        setWaveShape(2);
+                        break;
+
+                    case "Triangle":
+
+                        setWaveShape(1);
+                        break;
+
+                }
+
 
             }
 

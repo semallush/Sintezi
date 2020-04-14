@@ -21,7 +21,7 @@ public class Scale {
     private void setValues(ScaleType type) {
         switch (type) {
             case MAJOR:
-                this.values[0] = (float) 130.81;
+                this.values[0] = 130.81f;
                 this.values[1] = (float) 146.83;
                 this.values[2] = (float) 164.81;
                 this.values[3] = (float) 174.61;
