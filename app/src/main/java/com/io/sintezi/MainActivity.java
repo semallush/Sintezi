@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-
+//*
     // Used to load the 'native-lib' library on application startup.
     static {
         System.loadLibrary("native-lib");
